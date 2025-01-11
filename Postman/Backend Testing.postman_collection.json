@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "64270aa4-2927-4041-9bf8-882365067e2b",
+		"name": "Backend Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36958423"
+	},
+	"item": [
+		{
+			"name": "UserRoute",
+			"item": [
+				{
+					"name": "addUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"chhavi\",\r\n    \"phoneNumber\" : \"78585858585\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6000/user/adduser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6000",
+							"path": [
+								"user",
+								"adduser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserDetails",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6000/user/67827209bd0b1626be3f8921",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6000",
+							"path": [
+								"user",
+								"67827209bd0b1626be3f8921"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TranscationRoute",
+			"item": [
+				{
+					"name": "makeTranscation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"success\",\r\n    \"amount\": 50000,\r\n    \"type\": \"credit\",\r\n    \"userId\": \"678279377ba1754d7872e100\",\r\n    \"transactionDate\": \"2025-01-11T16:00:00Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6000/transcation/maketranscation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6000",
+							"path": [
+								"transcation",
+								"maketranscation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTransactionsByUserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6000/transcation/67827209bd0b1626be3f8921",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6000",
+							"path": [
+								"transcation",
+								"67827209bd0b1626be3f8921"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTransactionsWithUserDetails",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"success\"\r\n}\r\n\r\n// {\r\n//     \"status\": \"failed\",\r\n//     \"fromDate\": \"2025-01-10T00:00:00Z\",\r\n//     \"toDate\": \"2025-01-11T23:59:59Z\"\r\n// }\r\n// {\r\n//     \"type\": \"credit\",\r\n//     \"fromDate\": \"2025-01-01T00:00:00Z\",\r\n//     \"toDate\": \"2025-01-11T23:59:59Z\"\r\n// }\r\n// {\r\n//     \"status\": \"success\",\r\n//     \"type\": \"credit\",\r\n//     \"fromDate\": \"2025-01-01T00:00:00Z\",\r\n//     \"toDate\": \"2025-01-11T23:59:59Z\"\r\n// }\r\n\r\n// {\r\n//     \"fromDate\": \"2025-01-11T00:00:00Z\",\r\n//     \"toDate\": \"2025-01-11T23:59:59Z\"\r\n// }\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6000/transcation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6000",
+							"path": [
+								"transcation"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
